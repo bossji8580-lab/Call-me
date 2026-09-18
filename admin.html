@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — App Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-page">
+  <main class="admin-shell">
+    <div class="admin-head">
+      <div><span class="pill">ADMIN</span><h1>Website settings</h1><p>Update the public app information.</p></div>
+      <a class="secondary-btn" href="index.html">View website</a>
+    </div>
+
+    <div class="warning">
+      <strong>Demo admin panel</strong>
+      <p>This static starter saves settings in this browser only. For real APK uploads and secure admin login, connect Firebase/Supabase or your own backend before publishing.</p>
+    </div>
+
+    <form id="settingsForm" class="admin-card">
+      <label>App name<input id="name" type="text" placeholder="Your App"></label>
+      <label>Version<input id="version" type="text" placeholder="1.0.0"></label>
+      <label>Description<textarea id="description" rows="4" placeholder="Describe your app"></textarea></label>
+      <label>APK download URL<input id="apk" type="url" placeholder="https://example.com/app.apk"></label>
+      <label>Logo URL<input id="logo" type="url" placeholder="https://example.com/logo.png"></label>
+      <button class="primary-btn" type="submit">Save settings</button>
+      <button class="secondary-btn" id="reset" type="button">Reset demo settings</button>
+      <p id="saved" class="saved"></p>
+    </form>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>
