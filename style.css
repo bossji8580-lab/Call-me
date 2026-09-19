@@ -172,3 +172,144 @@ button {
   display: block;
   background: #111;
 }
+.photo-placeholder {
+}
+
+.girl-photo img,
+.calling-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #111;
+}
+
+/* CALLING POPUP */
+
+.call-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.calling-card {
+  width: min(360px, 92vw);
+  padding: 22px;
+  border: 1px solid #ff3f91;
+  border-radius: 25px;
+  background: #120b10;
+  text-align: center;
+  box-shadow: 0 20px 80px #ff3f9144;
+}
+
+.calling-photo {
+  width: 180px;
+  height: 230px;
+  margin: 0 auto 18px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #111;
+}
+
+.calling-name {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.calling-status {
+  margin-top: 8px;
+  color: #ff72ad;
+}
+
+.calling-loader {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin: 18px 0;
+}
+
+.calling-loader span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff3f91;
+  animation: pulse 0.8s infinite alternate;
+}
+
+.calling-loader span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.calling-loader span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.3;
+    transform: scale(0.7);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.timer {
+  font-size: 30px;
+  font-weight: 900;
+  color: #fff;
+}
+
+
+/* DOWNLOAD POPUP */
+
+.download-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.download-card {
+  width: min(360px, 92vw);
+  padding: 28px;
+  border-radius: 25px;
+  background: #120b10;
+  border: 1px solid #ff3f91;
+  text-align: center;
+  box-shadow: 0 20px 80px #ff3f9144;
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff3f91;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.close-btn {
+  margin-top: 12px;
+  padding: 12px 20px;
+  border: 1px solid #444;
+  border-radius: 12px;
+  background: #1a1a1a;
+  color: #fff;
+  cursor: pointer;
+}
