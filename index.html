@@ -1,397 +1,241 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Call — Download</title>
+  <title>Live Call</title>
   <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header class="nav">
+</head><body><header class="nav">
   <div class="brand">
     <span class="brand-dot"></span>
     <span id="appName">Live Call</span>
-  </div>
-
-  <a class="nav-btn" href="#download">Download</a>
-</header>
-
-
-<main>
-
-  <!-- HERO -->
-
-  <section class="hero">
-
-    <div class="hero-copy">
-
-      <span class="pill">LIVE CALL</span>
-
-      <h1>
-        Connect.<br>
-        <span>Talk. Have fun.</span>
-      </h1>
-
-      <p id="appDescription">
-        Connect quickly and enjoy a simple calling experience.
-      </p>
-
-      <div class="actions">
-
-        <button
-          id="liveCallBtn"
-          class="primary-btn"
-          type="button"
-          onclick="startLiveCall()">
-          📞 Live Call Connect
-        </button>
-
-        <a class="secondary-btn" href="#features">
-          Explore
-        </a>
-
-      </div>
-
-      <p class="small-note" id="versionText">
-        Version 1.0.0
-      </p>
-
-    </div>
-
-
-    <!-- PROFILE PHOTO -->
-
-    <div class="girl-card">
-
-      <div class="girl-photo">
-        <img
-          src="IMG_20260919_191921_588.jpg"
-          alt="Girl Profile">
-      </div>
-
-      <div class="online-dot"></div>
-
-      <h3>Live Call</h3>
-
-      <p>Available now</p>
-
-    </div>
-
-  </section>
-
-
-  <!-- FEATURES -->
-
-  <section id="features" class="section">
-
-    <div class="section-title">
-
-      <span class="pill">FEATURES</span>
-
-      <h2>Everything you need</h2>
-
-    </div>
-
-
-    <div class="cards">
-
-      <article>
-
-        <div class="icon">📞</div>
-
-        <h3>Live calls</h3>
-
-        <p>
-          Quick access to the calling experience.
-        </p>
-
-      </article>
-
-
-      <article>
-
-        <div class="icon">⚡</div>
-
-        <h3>Fast & simple</h3>
-
-        <p>
-          Designed for a smooth mobile experience.
-        </p>
-
-      </article>
-
-
-      <article>
-
-        <div class="icon">🔒</div>
-
-        <h3>Privacy focused</h3>
-
-        <p>
-          Simple controls and a clean experience.
-        </p>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
-  <!-- DOWNLOAD SECTION -->
-
-  <section class="download-section" id="download">
-
-    <div>
-
-      <span class="pill">GET THE APP</span>
-
-      <h2>Ready to get started?</h2>
-
-      <p>
-        Download the latest Android APK from the button below.
-      </p>
-
-    </div>
-
-
-    <a
-      id="downloadBtn2"
-      class="primary-btn"
-      href="#">
-      Download APK
-    </a>
-
-  </section>
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-  <span>
-    © <span id="year"></span>
-    <span id="footerName">Live Call</span>
-  </span>
-
-  <div>
-
+  </div><a class="nav-btn" href="#download">Download</a>
+
+</header><main><section class="hero">  <div class="hero-copy"><span class="pill">LIVE CALL</span>
+
+<h1>
+  Connect.<br>
+  <span>Talk. Have fun.</span>
+</h1>
+
+<p id="appDescription">
+  Connect quickly and enjoy a simple calling experience.
+</p>
+
+<div class="actions">
+
+  <button
+    id="liveCallBtn"
+    class="primary-btn"
+    type="button">
+    📞 Live Call Connect
+  </button>
+
+  <a class="secondary-btn" href="#features">
+    Explore
+  </a>
+
+</div>
+
+<p class="small-note">
+  Version 1.0.0
+</p>
+
+  </div>  <div class="girl-card"><div class="girl-photo">
+  <img
+    src="IMG_20260919_191921_588.jpg"
+    alt="Profile photo">
+</div>
+
+<div class="online-dot"></div>
+
+<h3>Live Call</h3>
+<p>Available now</p>
+
+  </div></section><section id="features" class="section">  <div class="section-title"><span class="pill">FEATURES</span>
+
+<h2>Everything you need</h2>
+
+  </div>  <div class="cards"><article>
+  <div class="icon">📞</div>
+  <h3>Live calls</h3>
+  <p>Quick access to the calling experience.</p>
+</article>
+
+<article>
+  <div class="icon">⚡</div>
+  <h3>Fast & simple</h3>
+  <p>Designed for a smooth mobile experience.</p>
+</article>
+
+<article>
+  <div class="icon">🔒</div>
+  <h3>Privacy focused</h3>
+  <p>Simple controls and a clean experience.</p>
+</article>
+
+  </div></section><section class="download-section" id="download">  <div>
+    <span class="pill">GET THE APP</span><h2>Ready to get started?</h2>
+
+<p>
+  Download the latest Android APK from the button below.
+</p>
+
+  </div><a
+id="downloadBtn2"
+class="primary-btn"
+href="#">
+Download APK
+</a>
+
+</section></main><footer>  <span>
+    © <span id="year"></span> Live Call
+  </span>  <div>
     <a href="#">Privacy</a>
-
     <a href="#">Terms</a>
-
     <a href="admin.html">Admin</a>
-
-  </div>
-
-</footer>
-
-
-<!-- CALLING POPUP -->
-
-<div
-  id="callOverlay"
-  class="call-overlay">
-
-  <div class="calling-card">
-
-
-    <div class="calling-photo">
-
-      <img
-        src="IMG_20260919_191921_588.jpg"
-        alt="Girl Profile">
-
-    </div>
-
-
-    <div class="calling-name">
-      Live Call
-    </div>
-
-
-    <div
-      class="calling-status"
-      id="callingStatus">
-      Calling...
-    </div>
-
-
-    <div class="calling-loader">
-
-      <span></span>
-      <span></span>
-      <span></span>
-
-    </div>
-
-
-    <div
-      class="timer"
-      id="callTimer">
-      3
-    </div>
-
-
-  </div>
-
+  </div></footer><!-- CALLING POPUP --><div id="callOverlay" class="call-overlay">  <div class="calling-card"><div class="calling-photo">
+  <img
+    src="IMG_20260919_191921_588.jpg"
+    alt="Profile photo">
 </div>
 
-
-<!-- DOWNLOAD POPUP -->
-
-<div
-  id="downloadOverlay"
-  class="download-overlay">
-
-  <div class="download-card">
-
-    <div class="success-icon">
-      ✓
-    </div>
-
-
-    <h2>
-      Call Ready
-    </h2>
-
-
-    <p>
-      Continue by downloading the Android application.
-    </p>
-
-
-    <a
-      id="downloadBtn"
-      class="primary-btn"
-      href="#">
-      📲 Download APK
-    </a>
-
-
-    <button
-      id="closeDownload"
-      class="close-btn"
-      type="button">
-      Close
-    </button>
-
-  </div>
-
+<div class="calling-name">
+  Live Call
 </div>
 
+<div class="calling-status" id="callingStatus">
+  Calling...
+</div>
 
-<!-- LIVE CALL SCRIPT -->
+<div class="calling-loader">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 
-<script>
+<div class="timer" id="callTimer">
+  3
+</div>
 
-function startLiveCall() {
+  </div></div><!-- DOWNLOAD POPUP --><div id="downloadOverlay" class="download-overlay">  <div class="download-card"><div class="success-icon">✓</div>
 
-  const callBox =
+<h2>Call Ready</h2>
+
+<p>
+  Continue by downloading the Android application.
+</p>
+
+<a
+  id="downloadBtn"
+  class="primary-btn"
+  href="#">
+  📲 Download APK
+</a>
+
+<button
+  id="closeDownload"
+  class="close-btn"
+  type="button">
+  Close
+</button>
+
+  </div></div><script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const liveCallBtn =
+    document.getElementById("liveCallBtn");
+
+  const callOverlay =
     document.getElementById("callOverlay");
 
-  const downloadBox =
+  const downloadOverlay =
     document.getElementById("downloadOverlay");
 
-  const timer =
+  const callTimer =
     document.getElementById("callTimer");
 
-  const status =
+  const callingStatus =
     document.getElementById("callingStatus");
 
+  const closeDownload =
+    document.getElementById("closeDownload");
 
-  if (!callBox) {
+  const year =
+    document.getElementById("year");
 
-    alert("Calling popup nahi mila.");
 
-    return;
-
+  if (year) {
+    year.textContent = new Date().getFullYear();
   }
 
 
-  if (downloadBox) {
+  if (liveCallBtn) {
 
-    downloadBox.style.display = "none";
+    liveCallBtn.addEventListener("click", function () {
 
-  }
+      if (!callOverlay) {
+        alert("Calling popup nahi mila.");
+        return;
+      }
 
+      callOverlay.style.display = "flex";
 
-  callBox.style.display = "flex";
+      if (downloadOverlay) {
+        downloadOverlay.style.display = "none";
+      }
 
+      let seconds = 3;
 
-  let seconds = 3;
+      if (callTimer) {
+        callTimer.textContent = seconds;
+      }
 
-
-  timer.textContent = seconds;
-
-  status.textContent = "Calling...";
-
-
-  const countdown =
-    setInterval(function () {
-
-      seconds--;
-
-      timer.textContent = seconds;
-
-
-      if (seconds <= 0) {
-
-        clearInterval(countdown);
+      if (callingStatus) {
+        callingStatus.textContent = "Calling...";
+      }
 
 
-        callBox.style.display = "none";
+      const countdown = setInterval(function () {
 
+        seconds--;
 
-        if (downloadBox) {
+        if (callTimer) {
+          callTimer.textContent = seconds;
+        }
 
-          downloadBox.style.display = "flex";
+        if (seconds <= 0) {
+
+          clearInterval(countdown);
+
+          callOverlay.style.display = "none";
+
+          if (downloadOverlay) {
+            downloadOverlay.style.display = "flex";
+          }
 
         }
 
+      }, 1000);
+
+    });
+
+  }
+
+
+  if (closeDownload) {
+
+    closeDownload.addEventListener("click", function () {
+
+      if (downloadOverlay) {
+        downloadOverlay.style.display = "none";
       }
 
-    }, 1000);
+    });
 
-}
+  }
 
+});
 
-/* DOWNLOAD CLOSE */
-
-const closeDownload =
-  document.getElementById("closeDownload");
-
-if (closeDownload) {
-
-  closeDownload.onclick = function () {
-
-    document.getElementById(
-      "downloadOverlay"
-    ).style.display = "none";
-
-  };
-
-}
-
-
-/* YEAR */
-
-const year =
-  document.getElementById("year");
-
-if (year) {
-
-  year.textContent =
-    new Date().getFullYear();
-
-}
-
-</script>
-
-
-</body>
+</script></body>
 </html>
