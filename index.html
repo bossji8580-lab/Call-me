@@ -1,275 +1,148 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090711">
-  <title>Vibe Call</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="theme-color" content="#08050f">
+  <title>VIDEO CALL</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<div class="app">
 
-<header class="topbar">
+<header class="top">
   <div>
-    <div class="brand">VIBE <span>CALL</span></div>
-    <div class="eyebrow">✦ LIVE MODELS ✦</div>
+    <h1>VIDEO <span>CALL</span></h1>
+    <p>★ LIVE MODELS ★</p>
   </div>
-  <div class="rec"><i></i> REC</div>
+  <div class="online">● ONLINE</div>
 </header>
 
 <main>
 
-<section class="stats">
-
-  <div class="online-pill">
-    <i></i>
-    <strong>3,444</strong> Indian users online
+  <div class="onlineBox">
+    🟢 <b id="onlineCount">3,476</b> Indian models online
   </div>
 
   <div class="offer">
-    ◷ LIMITED OFFER: FREE VIDEO CALLS
-    <strong id="timer">05:00</strong>
+    ⏱ LIMITED OFFER: FREE VIDEO CALLS ENDS IN
+    <b id="offerTimer">03:27</b>
   </div>
 
-  <a class="download wide" href="./app.apk">
-    📲 DOWNLOAD APP
-  </a>
-
-</section>
-
-
-<section class="hero">
-
-  <div class="hero-copy">
-
-    <span class="mini-tag">FAST & PRIVATE</span>
-
-    <h1>
-      Meet. Chat.<br>
-      <span>Call.</span>
-    </h1>
-
-    <p>
-      Connect through the app for a faster and smoother experience.
-    </p>
-
-    <a class="download hero-btn" href="./app.apk">
-      ⬇ DOWNLOAD APK
-    </a>
-
+  <div class="downloaded">
+    ⬇️ <b>2,851</b> downloaded today
   </div>
 
-  <div class="hero-orb">
-    <span>♥</span>
+  <div class="spots">
+    ⚡ ONLY <b id="spots">6 SPOTS LEFT</b> ⚡
   </div>
 
-</section>
-
-
-<section>
-
-<div class="section-title">
-  <h2>Live now</h2>
-  <span>Online <i></i></span>
-</div>
-
-
-<div class="cards">
-
-<article class="card">
-
-  <div class="photo photo1">
-    <span class="live">● LIVE</span>
+  <div class="city">
+    📍 Kolkata: <b>129</b> girls online now
   </div>
 
-  <div class="card-body">
+  <section id="models"></section>
 
-    <div>
-      <h3>Priya</h3>
-      <p><i></i> Online now</p>
-    </div>
-
-    <a class="call-btn" href="#">
-      📹 Call
-    </a>
-
+  <div class="hotBox">
+    <h2>🔥 HOT VIDEO FOR YOU 🔥</h2>
+    <div class="hotTimer" id="hotTimer">00:18</div>
+    <p>Video expires soon!</p>
+    <button onclick="openDownload()">⬇ SAVE & DOWNLOAD</button>
   </div>
-
-</article>
-
-
-<article class="card">
-
-  <div class="photo photo2">
-    <span class="live">● LIVE</span>
-  </div>
-
-  <div class="card-body">
-
-    <div>
-      <h3>Riya</h3>
-      <p><i></i> Online now</p>
-    </div>
-
-    <a class="call-btn" href="#">
-      📹 Call
-    </a>
-
-  </div>
-
-</article>
-
-
-<article class="card">
-
-  <div class="photo photo3">
-    <span class="live">● LIVE</span>
-  </div>
-
-  <div class="card-body">
-
-    <div>
-      <h3>Ananya</h3>
-      <p><i></i> Online now</p>
-    </div>
-
-    <a class="call-btn" href="#">
-      📹 Call
-    </a>
-
-  </div>
-
-</article>
-
-
-<article class="card">
-
-  <div class="photo photo4">
-    <span class="live">● LIVE</span>
-  </div>
-
-  <div class="card-body">
-
-    <div>
-      <h3>Neha</h3>
-      <p><i></i> Online now</p>
-    </div>
-
-    <a class="call-btn" href="#">
-      📹 Call
-    </a>
-
-  </div>
-
-</article>
-
-</div>
-</section>
-
-
-<section class="message-card">
-
-  <div class="avatar">💬</div>
-
-  <div>
-    <small>New Message</small>
-    <strong>
-      Open the app to continue chatting
-    </strong>
-  </div>
-
-  <a class="download small" href="./app.apk">
-    Open App
-  </a>
-
-</section>
-
-
-<section class="private-card">
-
-  <div class="lock">🔒</div>
-
-  <h2>Private video & chat</h2>
-
-  <p>
-    Download the app to contact profiles and use calling features.
-  </p>
-
-  <a class="download" href="./app.apk">
-    📲 DOWNLOAD APK
-  </a>
-
-</section>
 
 </main>
 
-
-<nav class="bottom-nav">
-
-  <a class="active" href="#">
-    ⌂
-    <span>Home</span>
-  </a>
-
-  <a href="./app.apk">
-    🔥
-    <span>Trending</span>
-  </a>
-
-  <a href="./app.apk">
-    💬
-    <span>Messages</span>
-  </a>
-
-  <a href="./app.apk">
-    👤
-    <span>Profile</span>
-  </a>
-
+<nav class="bottom">
+  <button onclick="home()">🏠<small>Home</small></button>
+  <button onclick="showPopup('🔥 Trending models are online now')">🔥<small>Trending</small></button>
+  <button onclick="showPopup('💬 You have new messages')">💬<small>Messages</small></button>
+  <button onclick="showPopup('👤 Profile opened')">👤<small>Profile</small></button>
 </nav>
 
+<div class="install">
+  <strong>⬇️ INSTALL APP</strong>
+  <small>1-on-1 video call experience</small>
+  <button onclick="openDownload()">📱 DOWNLOAD NOW</button>
+</div>
 
-<!-- VIDEO CALL DOWNLOAD POPUP -->
 
-<div class="modal" id="appModal">
+<!-- VIDEO CALL POPUP -->
 
-  <div class="modal-box">
+<div class="modal" id="callModal">
+  <div class="modalBox">
 
-    <button class="modal-close" id="closeModal">
-      ×
-    </button>
+    <button class="close" onclick="closeModal()">×</button>
 
-    <div class="modal-icon">
-      📹
+    <img id="callPhoto">
+
+    <h2 id="callName"></h2>
+    <p id="callRole"></p>
+
+    <div class="callIcon">📞</div>
+
+    <div id="callStatus">
+      Connecting...
     </div>
 
-    <h2>Video Call in the App</h2>
+    <div id="callTimer">00:03</div>
 
-    <p>
-      To start a video call, download the app first.
-    </p>
+    <button onclick="openDownload()">
+      ⬇ INSTALL APP TO CONTINUE
+    </button>
 
-    <a class="download modal-btn" href="./app.apk">
-      📲 DOWNLOAD APK
+  </div>
+</div>
+
+
+<!-- DOWNLOAD POPUP -->
+
+<div class="modal" id="downloadModal">
+  <div class="modalBox downloadBox">
+
+    <button class="close" onclick="closeDownload()">×</button>
+
+    <div class="downloadIcon">📲</div>
+
+    <h2>Install VIDEO CALL</h2>
+
+    <p>Download the Android app to continue.</p>
+
+    <a href="app.apk" download>
+      ⬇ DOWNLOAD APK
     </a>
 
     <small>
-      After installing the app, open it to start calling.
+      APK file ka naam <b>app.apk</b> hona chahiye.
     </small>
 
   </div>
-
 </div>
 
+
+<!-- GENERAL POPUP -->
+
+<div class="modal" id="generalModal">
+  <div class="modalBox">
+
+    <button class="close" onclick="closeGeneral()">×</button>
+
+    <div class="bigIcon">💗</div>
+
+    <h2 id="generalTitle">VIDEO CALL</h2>
+
+    <p id="generalMessage"></p>
+
+    <button onclick="closeGeneral()">
+      OK
+    </button>
+
+  </div>
+</div>
+
+
+<div id="toastArea"></div>
 
 <script src="script.js"></script>
 
-</div>
 </body>
 </html>
