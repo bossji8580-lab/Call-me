@@ -20,9 +20,8 @@ a {
 
 button {
   font: inherit;
+  cursor: pointer;
 }
-
-/* NAV */
 
 .nav {
   height: 72px;
@@ -31,11 +30,10 @@ button {
   justify-content: space-between;
   padding: 0 7%;
   border-bottom: 1px solid #242424;
-  background: rgba(8, 8, 8, 0.92);
-  backdrop-filter: blur(14px);
+  background: rgba(8, 8, 8, .95);
   position: sticky;
   top: 0;
-  z-index: 5;
+  z-index: 100;
 }
 
 .brand {
@@ -64,12 +62,10 @@ button {
   font-weight: 700;
 }
 
-/* HERO */
-
 .hero {
   min-height: 650px;
   display: grid;
-  grid-template-columns: 1fr 0.8fr;
+  grid-template-columns: 1fr .8fr;
   align-items: center;
   gap: 45px;
   padding: 70px 9%;
@@ -92,7 +88,7 @@ button {
 
 .hero h1 {
   font-size: clamp(48px, 7vw, 82px);
-  line-height: 0.98;
+  line-height: .98;
   margin: 20px 0;
 }
 
@@ -124,23 +120,9 @@ button {
   background: #ff3f91;
   color: #fff;
   font-weight: 800;
-  cursor: pointer;
   box-shadow: 0 10px 30px #ff3f9133;
-  transition: 0.2s;
+  transition: .2s;
 }
-
-.primary-btn:hover {
-  transform: translateY(-2px);
-  background: #ff5ba2;
-}
-
-.small-note {
-  font-size: 13px !important;
-  margin-top: 14px !important;
-  color: #777 !important;
-}
-
-/* GIRL PROFILE */
 
 .girl-card {
   width: 290px;
@@ -159,20 +141,7 @@ button {
   height: 370px;
   border-radius: 23px;
   overflow: hidden;
-  background: linear-gradient(145deg, #351525, #111);
-}
-
-.photo-placeholder {
- 
-.girl-photo img,
-.calling-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
   background: #111;
-}
-.photo-placeholder {
 }
 
 .girl-photo img,
@@ -182,26 +151,106 @@ button {
   object-fit: contain;
   display: block;
   background: #111;
+}
+
+.online-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #35e58b;
+  margin: -7px auto 10px;
+  position: relative;
+  border: 3px solid #111;
+}
+
+.section {
+  padding: 80px 9%;
+}
+
+.section-title {
+  margin-bottom: 35px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.cards article {
+  padding: 28px;
+  border: 1px solid #292929;
+  border-radius: 22px;
+  background: #111;
+}
+
+.cards p {
+  color: #999;
+  line-height: 1.6;
+}
+
+.icon {
+  font-size: 30px;
+}
+
+.download-section {
+  margin: 30px 9% 80px;
+  padding: 45px;
+  border: 1px solid #38212d;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #160c12, #0d0d0d);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.download-section p {
+  color: #999;
+}
+
+footer {
+  padding: 30px 9%;
+  border-top: 1px solid #242424;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #888;
+}
+
+footer div {
+  display: flex;
+  gap: 20px;
 }
 
 /* CALLING POPUP */
 
-.call-overlay {
-  display: none;
+.call-overlay,
+.download-overlay {
   position: fixed;
   inset: 0;
-  z-index: 9999;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.88);
+  background: rgba(0, 0, 0, .92);
 }
 
-.calling-card {
+.call-overlay {
+  display: none;
+  z-index: 99999;
+}
+
+.download-overlay {
+  display: none;
+  z-index: 99998;
+}
+
+.calling-card,
+.download-card {
   width: min(360px, 92vw);
-  padding: 22px;
-  border: 1px solid #ff3f91;
+  padding: 25px;
   border-radius: 25px;
+  border: 1px solid #ff3f91;
   background: #120b10;
   text-align: center;
   box-shadow: 0 20px 80px #ff3f9144;
@@ -238,23 +287,22 @@ button {
   height: 9px;
   border-radius: 50%;
   background: #ff3f91;
-  animation: pulse 0.8s infinite alternate;
+  animation: pulse .8s infinite alternate;
 }
 
 .calling-loader span:nth-child(2) {
-  animation-delay: 0.2s;
+  animation-delay: .2s;
 }
 
 .calling-loader span:nth-child(3) {
-  animation-delay: 0.4s;
+  animation-delay: .4s;
 }
 
 @keyframes pulse {
   from {
-    opacity: 0.3;
-    transform: scale(0.7);
+    opacity: .3;
+    transform: scale(.7);
   }
-
   to {
     opacity: 1;
     transform: scale(1);
@@ -264,31 +312,6 @@ button {
 .timer {
   font-size: 30px;
   font-weight: 900;
-  color: #fff;
-}
-
-
-/* DOWNLOAD POPUP */
-
-.download-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 9998;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.88);
-}
-
-.download-card {
-  width: min(360px, 92vw);
-  padding: 28px;
-  border-radius: 25px;
-  background: #120b10;
-  border: 1px solid #ff3f91;
-  text-align: center;
-  box-shadow: 0 20px 80px #ff3f9144;
 }
 
 .success-icon {
@@ -311,5 +334,32 @@ button {
   border-radius: 12px;
   background: #1a1a1a;
   color: #fff;
-  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 50px 6%;
+  }
+
+  .girl-card {
+    width: min(290px, 90vw);
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .download-section {
+    margin-left: 6%;
+    margin-right: 6%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  footer {
+    padding-left: 6%;
+    padding-right: 6%;
+    flex-direction: column;
+  }
 }
