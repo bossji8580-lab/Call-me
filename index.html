@@ -3,71 +3,197 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your App — Download</title>
+  <title>Live Call — Download</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="nav">
-    <div class="brand"><span class="brand-dot"></span><span id="appName">Your App</span></div>
-    <a class="nav-btn" href="#download">Download</a>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <span class="pill">ANDROID APP</span>
-        <h1>Connect. Talk.<br><span>Have fun.</span></h1>
-        <p id="appDescription">A simple, modern app experience. Download the Android app and get started.</p>
-        <div class="actions">
-          <a id="downloadBtn" class="primary-btn" href="#" download>Download APK</a>
-          <a class="secondary-btn" href="#features">Explore features</a>
+<header class="nav">
+  <div class="brand">
+    <span class="brand-dot"></span>
+    <span id="appName">Live Call</span>
+  </div>
+  <a class="nav-btn" href="#download">Download</a>
+</header>
+
+<main>
+
+  <section class="hero">
+
+    <div class="hero-copy">
+      <span class="pill">LIVE CALL</span>
+
+      <h1>Connect.<br><span>Talk. Have fun.</span></h1>
+
+      <p id="appDescription">
+        Connect quickly and enjoy a simple calling experience.
+      </p>
+
+      <div class="actions">
+        <button id="liveCallBtn" class="primary-btn" type="button">
+          📞 Live Call Connect
+        </button>
+
+        <a class="secondary-btn" href="#features">
+          Explore
+        </a>
+      </div>
+
+      <p class="small-note" id="versionText">
+        Latest version available
+      </p>
+    </div>
+
+    <div class="girl-card">
+
+      <!-- PHOTO -->
+      <div class="girl-photo">
+        <div class="photo-placeholder">
+          <div class="photo-icon">👩</div>
+          <div>Girl Profile</div>
         </div>
-        <p class="small-note" id="versionText">Latest version available</p>
       </div>
-      <div class="phone-wrap">
-        <div class="phone">
-          <div class="speaker"></div>
-          <div class="screen">
-            <div class="status">9:41 <span>● ● ▪</span></div>
-            <div class="app-preview">
-              <div class="preview-avatar">A</div>
-              <h3>Video Call</h3>
-              <p>Private conversations</p>
-              <div class="call-controls">
-                <button>◉</button><button class="end">☎</button><button>⌁</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="features" class="section">
-      <div class="section-title">
-        <span class="pill">FEATURES</span>
-        <h2>Everything you need</h2>
-      </div>
-      <div class="cards">
-        <article><div class="icon">◉</div><h3>Video calls</h3><p>Clean, easy-to-use calling experience with simple controls.</p></article>
-        <article><div class="icon">✦</div><h3>Fast & simple</h3><p>Designed for quick access and a smooth mobile experience.</p></article>
-        <article><div class="icon">⌁</div><h3>Privacy focused</h3><p>Keep your conversations and account details protected.</p></article>
-      </div>
-    </section>
+      <div class="online-dot"></div>
 
-    <section class="download-section" id="download">
-      <div>
-        <span class="pill">GET THE APP</span>
-        <h2>Ready to get started?</h2>
-        <p>Download the latest Android APK from the button below.</p>
-      </div>
-      <a id="downloadBtn2" class="primary-btn" href="#" download>Download APK</a>
-    </section>
-  </main>
+      <h3>Live Call</h3>
+      <p>Available now</p>
 
-  <footer>
-    <span>© <span id="year"></span> <span id="footerName">Your App</span></span>
-    <div><a href="#">Privacy</a><a href="#">Terms</a><a href="admin.html">Admin</a></div>
-  </footer>
-  <script src="script.js"></script>
+    </div>
+
+  </section>
+
+
+  <section id="features" class="section">
+
+    <div class="section-title">
+      <span class="pill">FEATURES</span>
+      <h2>Everything you need</h2>
+    </div>
+
+    <div class="cards">
+
+      <article>
+        <div class="icon">📞</div>
+        <h3>Live calls</h3>
+        <p>Quick access to the calling experience.</p>
+      </article>
+
+      <article>
+        <div class="icon">⚡</div>
+        <h3>Fast & simple</h3>
+        <p>Designed for a smooth mobile experience.</p>
+      </article>
+
+      <article>
+        <div class="icon">🔒</div>
+        <h3>Privacy focused</h3>
+        <p>Simple controls and a clean experience.</p>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <section class="download-section" id="download">
+
+    <div>
+      <span class="pill">GET THE APP</span>
+
+      <h2>Ready to get started?</h2>
+
+      <p>
+        Download the latest Android APK from the button below.
+      </p>
+    </div>
+
+    <a id="downloadBtn2" class="primary-btn" href="#">
+      Download APK
+    </a>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <span>
+    © <span id="year"></span>
+    <span id="footerName">Live Call</span>
+  </span>
+
+  <div>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="admin.html">Admin</a>
+  </div>
+
+</footer>
+
+
+<!-- CALLING POPUP -->
+
+<div id="callOverlay" class="call-overlay">
+
+  <div class="calling-card">
+
+    <div class="calling-photo">
+      <div class="photo-placeholder small">
+        <div class="photo-icon">👩</div>
+      </div>
+    </div>
+
+    <div class="calling-name">Live Call</div>
+
+    <div class="calling-status" id="callingStatus">
+      Connecting...
+    </div>
+
+    <div class="calling-loader">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="timer" id="callTimer">
+      3
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- DOWNLOAD POPUP -->
+
+<div id="downloadOverlay" class="download-overlay">
+
+  <div class="download-card">
+
+    <div class="success-icon">✓</div>
+
+    <h2>Call Ready</h2>
+
+    <p>
+      Continue by downloading the Android application.
+    </p>
+
+    <a id="downloadBtn" class="primary-btn" href="#">
+      📲 Download APK
+    </a>
+
+    <button id="closeDownload" class="close-btn" type="button">
+      Close
+    </button>
+
+  </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
