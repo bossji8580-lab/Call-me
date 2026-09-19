@@ -227,7 +227,63 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const btn = document.getElementById("liveCallBtn");
+  const callBox = document.getElementById("callOverlay");
+  const downloadBox = document.getElementById("downloadOverlay");
+  const timer = document.getElementById("callTimer");
+  const status = document.getElementById("callingStatus");
+  const closeBtn = document.getElementById("closeDownload");
+
+  if (!btn) {
+    alert("Live Call button nahi mila.");
+    return;
+  }
+
+  btn.addEventListener("click", function () {
+
+    /* CALLING POPUP */
+    callBox.style.display = "flex";
+    downloadBox.style.display = "none";
+
+    let seconds = 3;
+
+    timer.textContent = seconds;
+    status.textContent = "Calling...";
+
+    const countdown = setInterval(function () {
+
+      seconds--;
+      timer.textContent = seconds;
+
+      if (seconds <= 0) {
+
+        clearInterval(countdown);
+
+        /* HIDE CALLING */
+        callBox.style.display = "none";
+
+        /* SHOW DOWNLOAD */
+        downloadBox.style.display = "flex";
+
+      }
+
+    }, 1000);
+
+  });
+
+
+  /* CLOSE DOWNLOAD */
+  if (closeBtn) {
+    closeBtn.addEventListener("click", function () {
+      downloadBox.style.display = "none";
+    });
+  }
+
+});
+</script>
 
 </body>
 </html>
