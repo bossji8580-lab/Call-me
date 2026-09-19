@@ -18,7 +18,8 @@ try {
   settings = { ...defaults };
 }
 
-/* Basic page settings */
+
+/* PAGE SETTINGS */
 
 const appName = document.getElementById("appName");
 const footerName = document.getElementById("footerName");
@@ -39,7 +40,7 @@ if (year) {
 }
 
 
-/* APK links */
+/* APK BUTTONS */
 
 const downloadBtn = document.getElementById("downloadBtn");
 const downloadBtn2 = document.getElementById("downloadBtn2");
@@ -71,11 +72,18 @@ const closeDownload = document.getElementById("closeDownload");
 let callRunning = false;
 
 if (liveCallBtn) {
+
   liveCallBtn.addEventListener("click", function () {
 
     if (callRunning) return;
 
     callRunning = true;
+
+    /* SHOW CALLING POPUP */
+
+    if (downloadOverlay) {
+      downloadOverlay.classList.remove("show");
+    }
 
     if (callOverlay) {
       callOverlay.classList.add("show");
@@ -88,10 +96,13 @@ if (liveCallBtn) {
     }
 
     if (callingStatus) {
-      callingStatus.textContent = "Connecting...";
+      callingStatus.textContent = "Calling...";
     }
 
-    const timer = setInterval(function () {
+
+    /* 3 SECOND COUNTDOWN */
+
+    const countdown = setInterval(function () {
 
       seconds--;
 
@@ -101,11 +112,15 @@ if (liveCallBtn) {
 
       if (seconds <= 0) {
 
-        clearInterval(timer);
+        clearInterval(countdown);
+
+        /* CLOSE CALLING */
 
         if (callOverlay) {
           callOverlay.classList.remove("show");
         }
+
+        /* SHOW DOWNLOAD */
 
         if (downloadOverlay) {
           downloadOverlay.classList.add("show");
@@ -115,13 +130,16 @@ if (liveCallBtn) {
       }
 
     }, 1000);
+
   });
+
 }
 
 
 /* CLOSE DOWNLOAD POPUP */
 
 if (closeDownload) {
+
   closeDownload.addEventListener("click", function () {
 
     if (downloadOverlay) {
@@ -129,21 +147,26 @@ if (closeDownload) {
     }
 
   });
+
 }
 
 
-/* Prevent empty APK link from jumping to the top */
+/* APK NOT SET MESSAGE */
 
 if (downloadBtn) {
+
   downloadBtn.addEventListener("click", function (event) {
 
     if (!settings.apk || settings.apk === "#") {
+
       event.preventDefault();
 
       alert(
         "APK link abhi set nahi hai. Admin page se apna HTTPS APK link add karein."
       );
+
     }
 
   });
+
 }
