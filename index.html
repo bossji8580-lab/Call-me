@@ -6,6 +6,7 @@
   <title>Live Call — Download</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="nav">
@@ -13,47 +14,67 @@
     <span class="brand-dot"></span>
     <span id="appName">Live Call</span>
   </div>
+
   <a class="nav-btn" href="#download">Download</a>
 </header>
 
+
 <main>
+
+  <!-- HERO -->
 
   <section class="hero">
 
     <div class="hero-copy">
+
       <span class="pill">LIVE CALL</span>
 
-      <h1>Connect.<br><span>Talk. Have fun.</span></h1>
+      <h1>
+        Connect.<br>
+        <span>Talk. Have fun.</span>
+      </h1>
 
       <p id="appDescription">
         Connect quickly and enjoy a simple calling experience.
       </p>
 
       <div class="actions">
-        <button id="liveCallBtn" class="primary-btn" type="button" onclick="startLiveCall()">
-  📞 Live Call Connect
-</button>
+
+        <button
+          id="liveCallBtn"
+          class="primary-btn"
+          type="button"
+          onclick="startLiveCall()">
+          📞 Live Call Connect
+        </button>
 
         <a class="secondary-btn" href="#features">
           Explore
         </a>
+
       </div>
 
       <p class="small-note" id="versionText">
-        Latest version available
+        Version 1.0.0
       </p>
+
     </div>
+
+
+    <!-- PROFILE PHOTO -->
 
     <div class="girl-card">
 
-      <!-- PHOTO -->
       <div class="girl-photo">
-  <img src="IMG_20260919_191921_588.jpg" alt="Girl Profile">
-</div>
+        <img
+          src="IMG_20260919_191921_588.jpg"
+          alt="Girl Profile">
+      </div>
 
       <div class="online-dot"></div>
 
       <h3>Live Call</h3>
+
       <p>Available now</p>
 
     </div>
@@ -61,31 +82,57 @@
   </section>
 
 
+  <!-- FEATURES -->
+
   <section id="features" class="section">
 
     <div class="section-title">
+
       <span class="pill">FEATURES</span>
+
       <h2>Everything you need</h2>
+
     </div>
+
 
     <div class="cards">
 
       <article>
+
         <div class="icon">📞</div>
+
         <h3>Live calls</h3>
-        <p>Quick access to the calling experience.</p>
+
+        <p>
+          Quick access to the calling experience.
+        </p>
+
       </article>
 
+
       <article>
+
         <div class="icon">⚡</div>
+
         <h3>Fast & simple</h3>
-        <p>Designed for a smooth mobile experience.</p>
+
+        <p>
+          Designed for a smooth mobile experience.
+        </p>
+
       </article>
 
+
       <article>
+
         <div class="icon">🔒</div>
+
         <h3>Privacy focused</h3>
-        <p>Simple controls and a clean experience.</p>
+
+        <p>
+          Simple controls and a clean experience.
+        </p>
+
       </article>
 
     </div>
@@ -93,9 +140,12 @@
   </section>
 
 
+  <!-- DOWNLOAD SECTION -->
+
   <section class="download-section" id="download">
 
     <div>
+
       <span class="pill">GET THE APP</span>
 
       <h2>Ready to get started?</h2>
@@ -103,9 +153,14 @@
       <p>
         Download the latest Android APK from the button below.
       </p>
+
     </div>
 
-    <a id="downloadBtn2" class="primary-btn" href="#">
+
+    <a
+      id="downloadBtn2"
+      class="primary-btn"
+      href="#">
       Download APK
     </a>
 
@@ -113,6 +168,8 @@
 
 </main>
 
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -122,9 +179,13 @@
   </span>
 
   <div>
+
     <a href="#">Privacy</a>
+
     <a href="#">Terms</a>
+
     <a href="admin.html">Admin</a>
+
   </div>
 
 </footer>
@@ -132,29 +193,49 @@
 
 <!-- CALLING POPUP -->
 
-<div id="callOverlay" class="call-overlay">
+<div
+  id="callOverlay"
+  class="call-overlay">
 
   <div class="calling-card">
 
+
     <div class="calling-photo">
-  <img src="IMG_20260919_191921_588.jpg" alt="Girl Profile">
-</div>
 
-    <div class="calling-name">Live Call</div>
+      <img
+        src="IMG_20260919_191921_588.jpg"
+        alt="Girl Profile">
 
-    <div class="calling-status" id="callingStatus">
-      Connecting...
     </div>
+
+
+    <div class="calling-name">
+      Live Call
+    </div>
+
+
+    <div
+      class="calling-status"
+      id="callingStatus">
+      Calling...
+    </div>
+
 
     <div class="calling-loader">
+
       <span></span>
       <span></span>
       <span></span>
+
     </div>
 
-    <div class="timer" id="callTimer">
+
+    <div
+      class="timer"
+      id="callTimer">
       3
     </div>
+
 
   </div>
 
@@ -163,127 +244,154 @@
 
 <!-- DOWNLOAD POPUP -->
 
-<div id="downloadOverlay" class="download-overlay">
+<div
+  id="downloadOverlay"
+  class="download-overlay">
 
   <div class="download-card">
 
-    <div class="success-icon">✓</div>
+    <div class="success-icon">
+      ✓
+    </div>
 
-    <h2>Call Ready</h2>
+
+    <h2>
+      Call Ready
+    </h2>
+
 
     <p>
       Continue by downloading the Android application.
     </p>
 
-    <a id="downloadBtn" class="primary-btn" href="#">
+
+    <a
+      id="downloadBtn"
+      class="primary-btn"
+      href="#">
       📲 Download APK
     </a>
 
-    <button id="closeDownload" class="close-btn" type="button">
+
+    <button
+      id="closeDownload"
+      class="close-btn"
+      type="button">
       Close
     </button>
 
   </div>
 
 </div>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
 
-  const btn = document.getElementById("liveCallBtn");
-  const call = document.getElementById("callOverlay");
-  const download = document.getElementById("downloadOverlay");
-  const timer = document.getElementById("callTimer");
-  const status = document.getElementById("callingStatus");
 
-  if (!btn) return;
-
-  btn.onclick = function () {
-
-    call.classList.add("show");
-    download.classList.remove("show");
-
-    let time = 3;
-    timer.textContent = time;
-    status.textContent = "Calling...";
-
-    const count = setInterval(function () {
-
-      time--;
-      timer.textContent = time;
-
-      if (time <= 0) {
-
-        clearInterval(count);
-
-        call.classList.remove("show");
-        download.classList.add("show");
-
-      }
-
-    }, 1000);
-
-  };
-
-});
-</script>
+<!-- LIVE CALL SCRIPT -->
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
 
-  const btn = document.getElementById("liveCallBtn");
-  const callBox = document.getElementById("callOverlay");
-  const downloadBox = document.getElementById("downloadOverlay");
-  const timer = document.getElementById("callTimer");
-  const status = document.getElementById("callingStatus");
-  const closeBtn = document.getElementById("closeDownload");
+function startLiveCall() {
 
-  if (!btn) {
-    alert("Live Call button nahi mila.");
+  const callBox =
+    document.getElementById("callOverlay");
+
+  const downloadBox =
+    document.getElementById("downloadOverlay");
+
+  const timer =
+    document.getElementById("callTimer");
+
+  const status =
+    document.getElementById("callingStatus");
+
+
+  if (!callBox) {
+
+    alert("Calling popup nahi mila.");
+
     return;
+
   }
 
-  btn.addEventListener("click", function () {
 
-    /* CALLING POPUP */
-    callBox.style.display = "flex";
+  if (downloadBox) {
+
     downloadBox.style.display = "none";
 
-    let seconds = 3;
+  }
 
-    timer.textContent = seconds;
-    status.textContent = "Calling...";
 
-    const countdown = setInterval(function () {
+  callBox.style.display = "flex";
+
+
+  let seconds = 3;
+
+
+  timer.textContent = seconds;
+
+  status.textContent = "Calling...";
+
+
+  const countdown =
+    setInterval(function () {
 
       seconds--;
+
       timer.textContent = seconds;
+
 
       if (seconds <= 0) {
 
         clearInterval(countdown);
 
-        /* HIDE CALLING */
+
         callBox.style.display = "none";
 
-        /* SHOW DOWNLOAD */
-        downloadBox.style.display = "flex";
+
+        if (downloadBox) {
+
+          downloadBox.style.display = "flex";
+
+        }
 
       }
 
     }, 1000);
 
-  });
+}
 
 
-  /* CLOSE DOWNLOAD */
-  if (closeBtn) {
-    closeBtn.addEventListener("click", function () {
-      downloadBox.style.display = "none";
-    });
-  }
+/* DOWNLOAD CLOSE */
 
-});
+const closeDownload =
+  document.getElementById("closeDownload");
+
+if (closeDownload) {
+
+  closeDownload.onclick = function () {
+
+    document.getElementById(
+      "downloadOverlay"
+    ).style.display = "none";
+
+  };
+
+}
+
+
+/* YEAR */
+
+const year =
+  document.getElementById("year");
+
+if (year) {
+
+  year.textContent =
+    new Date().getFullYear();
+
+}
+
 </script>
+
 
 </body>
 </html>
