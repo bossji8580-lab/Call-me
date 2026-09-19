@@ -170,4 +170,5 @@ button {
   height: 100%;
   object-fit: contain;
   display: block;
+  background: #111;
 }
