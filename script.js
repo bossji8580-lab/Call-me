@@ -1,63 +1,246 @@
-const modal = document.getElementById("appModal");
-const closeModal = document.getElementById("closeModal");
+const people = [
+  {
+    name: "Riddhi Rathore",
+    role: "Sweet Talk Expert",
+    img: "IMG_20260920_010116_975.jpg",
+    busy: false
+  },
+  {
+    name: "Kavya Thakur",
+    role: "Video Call Expert",
+    img: "IMG_20260920_010117_568.jpg",
+    busy: false
+  },
+  {
+    name: "Priya Sharma",
+    role: "Video Call Expert",
+    img: "IMG_20260920_010117_287.jpg",
+    busy: false
+  },
+  {
+    name: "Neha Verma",
+    role: "Sweet Talk Expert",
+    img: "IMG_20260920_010117_390.jpg",
+    busy: false
+  },
+  {
+    name: "Simran Kaur",
+    role: "Live Chat Expert",
+    img: "IMG_20260920_010117_034.jpg",
+    busy: false
+  },
+  {
+    name: "Pooja Singh",
+    role: "Video Call Expert",
+    img: "IMG_20260920_010117_153.jpg",
+    busy: false
+  }
+];
 
-function openAppModal(){
-  modal.classList.add("show");
+const models = document.getElementById("models");
+
+people.forEach((person, index) => {
+
+  models.innerHTML += `
+    <div class="card">
+
+      <div class="cardImg">
+        <img
+          src="${person.img}"
+          alt="${person.name}"
+        >
+
+        <span class="live">● LIVE</span>
+      </div>
+
+      <div class="info">
+
+        <div class="name">
+          ${person.name}
+        </div>
+
+        <div class="role">
+          ${person.role}
+        </div>
+
+        <button
+          class="call"
+          onclick="startCall(${index})"
+        >
+          📞 Start Video Call
+        </button>
+
+        <div class="presence">
+          🟢 Online Now
+        </div>
+
+      </div>
+
+    </div>
+  `;
+});
+
+
+/* VIDEO CALL POPUP */
+
+function startCall(index) {
+
+  const person = people[index];
+
+  document.getElementById("popImg").src =
+    person.img;
+
+  document.getElementById("popName").innerText =
+    person.name;
+
+  document.getElementById("popRole").innerText =
+    person.role;
+
+  document.getElementById("calling").innerText =
+    "Connecting...";
+
+  document.getElementById("timer").innerText =
+    "00:03";
+
+  document
+    .getElementById("popup")
+    .classList.add("show");
+
+  let seconds = 3;
+
+  const callTimer = setInterval(() => {
+
+    seconds--;
+
+    if (seconds >= 0) {
+
+      document.getElementById("timer").innerText =
+        "00:0" + seconds;
+
+    }
+
+    if (seconds <= 0) {
+
+      clearInterval(callTimer);
+
+      document.getElementById("calling").innerText =
+        "💗 Ready — install the app to continue";
+
+    }
+
+  }, 1000);
 }
 
-function hideAppModal(){
-  modal.classList.remove("show");
+
+/* CLOSE POPUP */
+
+function closePopup() {
+
+  document
+    .getElementById("popup")
+    .classList.remove("show");
+
 }
 
 
-/* Video Call button */
+/* DOWNLOAD APK */
 
-document.querySelectorAll(".call-btn").forEach(button => {
+function downloadApp() {
 
-  button.addEventListener("click", function(event){
+  window.location.href = "app.apk";
 
-    event.preventDefault();
+}
 
-    openAppModal();
 
+/* SMALL POPUP MESSAGE */
+
+function popup(message) {
+
+  const toast =
+    document.createElement("div");
+
+  toast.className = "toast";
+
+  toast.innerText = message;
+
+  document
+    .getElementById("toast")
+    .appendChild(toast);
+
+  setTimeout(() => {
+
+    toast.remove();
+
+  }, 3000);
+
+}
+
+
+/* HOME */
+
+function topPage() {
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
   });
 
-});
+}
 
 
-/* Popup close */
+/* OFFER COUNTDOWN */
 
-closeModal.addEventListener("click", hideAppModal);
+let seconds = 207;
 
-modal.addEventListener("click", function(event){
-
-  if(event.target === modal){
-    hideAppModal();
-  }
-
-});
-
-
-/* Countdown */
-
-let seconds = 5 * 60;
-
-const timer = document.getElementById("timer");
-
-setInterval(function(){
+setInterval(() => {
 
   seconds--;
 
-  if(seconds < 0){
-    seconds = 5 * 60;
+  if (seconds < 0) {
+    seconds = 207;
   }
 
   const minutes =
-    String(Math.floor(seconds / 60)).padStart(2,"0");
+    Math.floor(seconds / 60);
 
-  const secs =
-    String(seconds % 60).padStart(2,"0");
+  const remaining =
+    seconds % 60;
 
-  timer.textContent = minutes + ":" + secs;
+  document.getElementById(
+    "offerTimer"
+  ).innerText =
+    "0" +
+    minutes +
+    ":" +
+    String(remaining).padStart(2, "0");
 
-},1000);
+}, 1000);
+
+
+/* AUTOMATIC NOTIFICATIONS */
+
+setTimeout(() => {
+
+  popup(
+    "💬 New Message — Someone is waiting for a video call"
+  );
+
+}, 9000);
+
+
+setTimeout(() => {
+
+  popup(
+    "🔥 Trending — New models are online"
+  );
+
+}, 20000);
+
+
+setTimeout(() => {
+
+  popup(
+    "📲 Install the app to continue"
+  );
+
+}, 32000);
