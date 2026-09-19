@@ -186,7 +186,46 @@
   </div>
 
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+  const btn = document.getElementById("liveCallBtn");
+  const call = document.getElementById("callOverlay");
+  const download = document.getElementById("downloadOverlay");
+  const timer = document.getElementById("callTimer");
+  const status = document.getElementById("callingStatus");
+
+  if (!btn) return;
+
+  btn.onclick = function () {
+
+    call.classList.add("show");
+    download.classList.remove("show");
+
+    let time = 3;
+    timer.textContent = time;
+    status.textContent = "Calling...";
+
+    const count = setInterval(function () {
+
+      time--;
+      timer.textContent = time;
+
+      if (time <= 0) {
+
+        clearInterval(count);
+
+        call.classList.remove("show");
+        download.classList.add("show");
+
+      }
+
+    }, 1000);
+
+  };
+
+});
+</script>
 
 <script src="script.js"></script>
 
