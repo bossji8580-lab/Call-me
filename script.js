@@ -2,245 +2,232 @@ const people = [
   {
     name: "Riddhi Rathore",
     role: "Sweet Talk Expert",
-    img: "IMG_20260920_010116_975.jpg",
-    busy: false
+    img: "IMG_20260920_010116_975.jpg"
   },
   {
     name: "Kavya Thakur",
     role: "Video Call Expert",
-    img: "IMG_20260920_010117_568.jpg",
-    busy: false
+    img: "IMG_20260920_010117_568.jpg"
   },
   {
     name: "Priya Sharma",
     role: "Video Call Expert",
-    img: "IMG_20260920_010117_287.jpg",
-    busy: false
+    img: "IMG_20260920_010117_287.jpg"
   },
   {
     name: "Neha Verma",
     role: "Sweet Talk Expert",
-    img: "IMG_20260920_010117_390.jpg",
-    busy: false
+    img: "IMG_20260920_010117_390.jpg"
   },
   {
     name: "Simran Kaur",
     role: "Live Chat Expert",
-    img: "IMG_20260920_010117_034.jpg",
-    busy: false
+    img: "IMG_20260920_010117_034.jpg"
   },
   {
     name: "Pooja Singh",
     role: "Video Call Expert",
-    img: "IMG_20260920_010117_153.jpg",
-    busy: false
+    img: "IMG_20260920_010117_153.jpg"
   }
 ];
 
 const models = document.getElementById("models");
 
-people.forEach((person, index) => {
+if (models) {
+  people.forEach((person, index) => {
+    models.innerHTML += `
+      <div class="card">
+        <div class="cardImg">
+          <img src="${person.img}" alt="${person.name}">
+          <span class="live">● LIVE</span>
+        </div>
 
-  models.innerHTML += `
-    <div class="card">
+        <div class="info">
+          <div class="name">${person.name}</div>
+          <div class="role">${person.role}</div>
 
-      <div class="cardImg">
-        <img
-          src="${person.img}"
-          alt="${person.name}"
-        >
+          <button class="call" onclick="startCall(${index})">
+            📞 Start Video Call
+          </button>
 
-        <span class="live">● LIVE</span>
+          <div class="presence">🟢 Online Now</div>
+        </div>
       </div>
-
-      <div class="info">
-
-        <div class="name">
-          ${person.name}
-        </div>
-
-        <div class="role">
-          ${person.role}
-        </div>
-
-        <button
-          class="call"
-          onclick="startCall(${index})"
-        >
-          📞 Start Video Call
-        </button>
-
-        <div class="presence">
-          🟢 Online Now
-        </div>
-
-      </div>
-
-    </div>
-  `;
-});
+    `;
+  });
+}
 
 
-/* VIDEO CALL POPUP */
+/* VIDEO CALL */
 
 function startCall(index) {
-
   const person = people[index];
 
-  document.getElementById("popImg").src =
-    person.img;
+  const modal = document.getElementById("callModal");
+  const photo = document.getElementById("callPhoto");
+  const name = document.getElementById("callName");
+  const role = document.getElementById("callRole");
+  const status = document.getElementById("callStatus");
+  const timerText = document.getElementById("callTimer");
 
-  document.getElementById("popName").innerText =
-    person.name;
+  if (!modal) {
+    alert("Call popup load nahi hua. index.html check karo.");
+    return;
+  }
 
-  document.getElementById("popRole").innerText =
-    person.role;
+  photo.src = person.img;
+  name.innerText = person.name;
+  role.innerText = person.role;
 
-  document.getElementById("calling").innerText =
-    "Connecting...";
+  status.innerText = "Connecting...";
+  timerText.innerText = "00:03";
 
-  document.getElementById("timer").innerText =
-    "00:03";
+  modal.classList.add("show");
 
-  document
-    .getElementById("popup")
-    .classList.add("show");
+  let time = 3;
 
-  let seconds = 3;
+  const timer = setInterval(() => {
+    time--;
 
-  const callTimer = setInterval(() => {
+    if (time > 0) {
+      timerText.innerText = "00:0" + time;
+    } else {
+      timerText.innerText = "00:00";
+      clearInterval(timer);
 
-    seconds--;
-
-    if (seconds >= 0) {
-
-      document.getElementById("timer").innerText =
-        "00:0" + seconds;
-
-    }
-
-    if (seconds <= 0) {
-
-      clearInterval(callTimer);
-
-      document.getElementById("calling").innerText =
+      status.innerText =
         "💗 Ready — install the app to continue";
-
     }
-
   }, 1000);
 }
 
 
-/* CLOSE POPUP */
+function closeModal() {
+  const modal = document.getElementById("callModal");
 
-function closePopup() {
-
-  document
-    .getElementById("popup")
-    .classList.remove("show");
-
+  if (modal) {
+    modal.classList.remove("show");
+  }
 }
 
 
-/* DOWNLOAD APK */
+/* DOWNLOAD POPUP */
 
-function downloadApp() {
+function openDownload() {
+  const modal = document.getElementById("downloadModal");
 
-  window.location.href = "app.apk";
-
+  if (modal) {
+    modal.classList.add("show");
+  }
 }
 
 
-/* SMALL POPUP MESSAGE */
+function closeDownload() {
+  const modal = document.getElementById("downloadModal");
 
-function popup(message) {
+  if (modal) {
+    modal.classList.remove("show");
+  }
+}
 
-  const toast =
-    document.createElement("div");
 
-  toast.className = "toast";
+/* GENERAL POPUP */
 
-  toast.innerText = message;
+function showPopup(message) {
+  const modal = document.getElementById("generalModal");
+  const messageBox = document.getElementById("generalMessage");
 
-  document
-    .getElementById("toast")
-    .appendChild(toast);
+  if (modal && messageBox) {
+    messageBox.innerText = message;
+    modal.classList.add("show");
+  }
+}
 
-  setTimeout(() => {
 
-    toast.remove();
+function closeGeneral() {
+  const modal = document.getElementById("generalModal");
 
-  }, 3000);
-
+  if (modal) {
+    modal.classList.remove("show");
+  }
 }
 
 
 /* HOME */
 
-function topPage() {
-
+function home() {
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
-
 }
 
 
-/* OFFER COUNTDOWN */
+/* OFFER TIMER */
 
-let seconds = 207;
+let offerSeconds = 207;
 
 setInterval(() => {
+  offerSeconds--;
 
-  seconds--;
-
-  if (seconds < 0) {
-    seconds = 207;
+  if (offerSeconds < 0) {
+    offerSeconds = 207;
   }
 
-  const minutes =
-    Math.floor(seconds / 60);
+  const minutes = Math.floor(offerSeconds / 60);
+  const seconds = offerSeconds % 60;
 
-  const remaining =
-    seconds % 60;
+  const timer = document.getElementById("offerTimer");
 
-  document.getElementById(
-    "offerTimer"
-  ).innerText =
-    "0" +
-    minutes +
-    ":" +
-    String(remaining).padStart(2, "0");
-
+  if (timer) {
+    timer.innerText =
+      "0" + minutes + ":" + String(seconds).padStart(2, "0");
+  }
 }, 1000);
 
 
-/* AUTOMATIC NOTIFICATIONS */
+/* HOT VIDEO TIMER */
+
+let hotSeconds = 18;
+
+setInterval(() => {
+  hotSeconds--;
+
+  if (hotSeconds < 0) {
+    hotSeconds = 18;
+  }
+
+  const timer = document.getElementById("hotTimer");
+
+  if (timer) {
+    timer.innerText =
+      "00:" + String(hotSeconds).padStart(2, "0");
+  }
+}, 1000);
+
+
+/* AUTOMATIC POPUPS */
 
 setTimeout(() => {
-
-  popup(
-    "💬 New Message — Someone is waiting for a video call"
+  showPopup(
+    "💬 New message — Someone is waiting for a video call"
   );
-
-}, 9000);
-
+}, 8000);
 
 setTimeout(() => {
-
-  popup(
-    "🔥 Trending — New models are online"
+  showPopup(
+    "🔥 Trending — New models are online now"
   );
-
-}, 20000);
-
+}, 18000);
 
 setTimeout(() => {
-
-  popup(
-    "📲 Install the app to continue"
+  showPopup(
+    "🎁 Limited offer — Video call slots available"
   );
+}, 30000);
 
-}, 32000);
+setTimeout(() => {
+  showPopup(
+    "📲 Install VIDEO CALL app to continue"
+  );
+}, 45000);
