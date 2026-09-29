@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#08050f">
   <title>VIDEO CALL</title>
   <link rel="stylesheet" href="style.css">
@@ -10,136 +11,214 @@
 
 <body>
 
-<header class="top">
-  <div>
-    <h1>VIDEO <span>CALL</span></h1>
-    <p>★ LIVE MODELS ★</p>
-  </div>
-  <div class="online">● ONLINE</div>
-</header>
-
-<main>
-
-  <div class="onlineBox">
-    🟢 <b id="onlineCount">3,476</b> Indian models online
-  </div>
-
-  <div class="offer">
-    ⏱ LIMITED OFFER: FREE VIDEO CALLS ENDS IN
-    <b id="offerTimer">03:27</b>
-  </div>
-
-  <div class="downloaded">
-    ⬇️ <b>2,851</b> downloaded today
-  </div>
-
-  <div class="spots">
-    ⚡ ONLY <b id="spots">6 SPOTS LEFT</b> ⚡
-  </div>
-
-  <div class="city">
-    📍 Kolkata: <b>129</b> girls online now
-  </div>
-
-  <section id="models"></section>
-
-  <div class="hotBox">
-    <h2>🔥 HOT VIDEO FOR YOU 🔥</h2>
-    <div class="hotTimer" id="hotTimer">00:18</div>
-    <p>Video expires soon!</p>
-    <button onclick="openDownload()">⬇ SAVE & DOWNLOAD</button>
-  </div>
-
-</main>
-
-<nav class="bottom">
-  <button onclick="home()">🏠<small>Home</small></button>
-  <button onclick="showPopup('🔥 Trending models are online now')">🔥<small>Trending</small></button>
-  <button onclick="showPopup('💬 You have new messages')">💬<small>Messages</small></button>
-  <button onclick="showPopup('👤 Profile opened')">👤<small>Profile</small></button>
-</nav>
-
-<div class="install">
-  <strong>⬇️ INSTALL APP</strong>
-  <small>1-on-1 video call experience</small>
-  <button onclick="openDownload()">📱 DOWNLOAD NOW</button>
-</div>
-
-
-<!-- VIDEO CALL POPUP -->
-
-<div class="modal" id="callModal">
-  <div class="modalBox">
-
-    <button class="close" onclick="closeModal()">×</button>
-
-    <img id="callPhoto">
-
-    <h2 id="callName"></h2>
-    <p id="callRole"></p>
-
-    <div class="callIcon">📞</div>
-
-    <div id="callStatus">
-      Connecting...
+  <!-- HEADER -->
+  <header class="top">
+    <div>
+      <h1>VIDEO <span>CALL</span></h1>
+      <p>★ LIVE MODELS ★</p>
     </div>
 
-    <div id="callTimer">00:03</div>
+    <div class="online">● ONLINE</div>
+  </header>
+
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <div class="onlineBox">
+      🟢 <b id="onlineCount">3,476</b> Indian models online
+    </div>
+
+    <div class="offer">
+      ⏱ LIMITED OFFER: FREE VIDEO CALLS ENDS IN
+      <b id="offerTimer">03:27</b>
+    </div>
+
+    <div class="downloaded">
+      ⬇️ <b>2,851</b> downloaded today
+    </div>
+
+    <div class="spots">
+      ⚡ ONLY <b id="spots">6 SPOTS LEFT</b> ⚡
+    </div>
+
+    <div class="city">
+      📍 Kolkata: <b>129</b> girls online now
+    </div>
+
+    <section id="models"></section>
+
+
+    <!-- HOT VIDEO -->
+    <div class="hotBox">
+
+      <h2>🔥 HOT VIDEO FOR YOU 🔥</h2>
+
+      <div class="hotTimer" id="hotTimer">
+        00:18
+      </div>
+
+      <p>Video expires soon!</p>
+
+      <button onclick="openDownload()">
+        ⬇ SAVE & DOWNLOAD
+      </button>
+
+    </div>
+
+  </main>
+
+
+  <!-- BOTTOM NAVIGATION -->
+  <nav class="bottom">
+
+    <button onclick="home()">
+      🏠
+      <small>Home</small>
+    </button>
+
+    <button onclick="showPopup('🔥 Trending models are online now')">
+      🔥
+      <small>Trending</small>
+    </button>
+
+    <button onclick="showPopup('💬 You have new messages')">
+      💬
+      <small>Messages</small>
+    </button>
+
+    <button onclick="showPopup('👤 Profile opened')">
+      👤
+      <small>Profile</small>
+    </button>
+
+  </nav>
+
+
+  <!-- INSTALL APP BAR -->
+  <div class="install">
+
+    <strong>⬇️ INSTALL APP</strong>
+
+    <small>
+      1-on-1 video call experience
+    </small>
 
     <button onclick="openDownload()">
-      ⬇ INSTALL APP TO CONTINUE
+      📱 DOWNLOAD NOW
     </button>
 
   </div>
-</div>
 
 
-<!-- DOWNLOAD POPUP -->
+  <!-- VIDEO CALL POPUP -->
+  <div class="modal" id="callModal">
 
-<div class="modal" id="downloadModal">
-  <div class="modalBox downloadBox">
+    <div class="modalBox">
 
-    <button class="close" onclick="closeDownload()">×</button>
+      <button class="close" onclick="closeModal()">
+        ×
+      </button>
 
-    <div class="downloadIcon">📲</div>
+      <img id="callPhoto" alt="Call">
 
-    <h2>Install VIDEO CALL</h2>
+      <h2 id="callName"></h2>
 
-    <p>Download the Android app to continue.</p>
+      <p id="callRole"></p>
 
-   <a href="https://drive.google.com/uc?export=download&id=1kEUUloZHHxONCgvHyrQtZU58ZIL0bxZq">
-  ⬇ DOWNLOAD APK
-</a>
+      <div class="callIcon">
+        📞
+      </div>
 
- <!-- DOWNLOAD POPUP -->
+      <div id="callStatus">
+        Connecting...
+      </div>
 
-<div class="modal" id="downloadModal">
-  <div class="modalBox downloadBox">
+      <div id="callTimer">
+        00:03
+      </div>
 
-    <button class="close" onclick="closeDownload()">×</button>
+      <button onclick="openDownload()">
+        ⬇ INSTALL APP TO CONTINUE
+      </button>
 
-    <div class="downloadIcon">📲</div>
-
-    <h2>Install VIDEO CALL</h2>
-
-    <p>Download the Android app to continue.</p>
-
-    <a
-      href="https://github.com/bossji8580-lab/Call-me/raw/refs/heads/main/Video%20Call%20.apk"
-      download="Video Call.apk">
-      ⬇ DOWNLOAD APK
-    </a>
-
-    <small>
-      Android app download
-    </small>
+    </div>
 
   </div>
-</div>
 
-<div id="toastArea"></div>
 
-<script src="script.js"></script>
+  <!-- DOWNLOAD POPUP -->
+  <div class="modal" id="downloadModal">
+
+    <div class="modalBox downloadBox">
+
+      <button class="close" onclick="closeDownload()">
+        ×
+      </button>
+
+      <div class="downloadIcon">
+        📲
+      </div>
+
+      <h2>
+        Install VIDEO CALL
+      </h2>
+
+      <p>
+        Download the Android app to continue.
+      </p>
+
+      <!-- DIRECT GITHUB APK -->
+      <a
+        href="https://github.com/bossji8580-lab/Call-me/raw/refs/heads/main/Video%20Call%20.apk"
+        download="Video Call.apk">
+        ⬇ DOWNLOAD APK
+      </a>
+
+      <small>
+        Android app download
+      </small>
+
+    </div>
+
+  </div>
+
+
+  <!-- GENERAL POPUP -->
+  <div class="modal" id="generalModal">
+
+    <div class="modalBox">
+
+      <button class="close" onclick="closeGeneral()">
+        ×
+      </button>
+
+      <div class="bigIcon">
+        💗
+      </div>
+
+      <h2 id="generalTitle">
+        VIDEO CALL
+      </h2>
+
+      <p id="generalMessage"></p>
+
+      <button onclick="closeGeneral()">
+        OK
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- TOAST -->
+  <div id="toastArea"></div>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
 
 </body>
+
 </html>
